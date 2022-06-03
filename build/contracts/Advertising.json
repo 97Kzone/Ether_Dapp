@@ -1,0 +1,86 @@
+{
+  "contractName": "Advertising",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Advertising.sol\":\"Advertising\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Advertising.sol\":{\"keccak256\":\"0xa5f0304a89674255c0286ec926d4f923594c73f894779f2edcd3b57ef3105a40\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f27e76bd8bf80286b7fda5989670fc274d9e96e19fea19850c4038827c324047\",\"dweb:/ipfs/QmQcgEihLcKxE2Qjk8mEGPFVCXwCbvpv6A8TdadojcMuDP\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220134be7f4239d19eb9124eb2b65b1af0ed8e7af9394c5305f673e877f7eb44c8d64736f6c634300080d0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220134be7f4239d19eb9124eb2b65b1af0ed8e7af9394c5305f673e877f7eb44c8d64736f6c634300080d0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "69:31:0:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "69:31:0:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\n\r\ncontract Advertising {\r\n    \r\n}",
+  "sourcePath": "C:\\Users\\rkdeh\\BlockChain_Task\\advertising-smart-contract\\contracts\\Advertising.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Advertising.sol",
+    "exportedSymbols": {
+      "Advertising": [
+        2
+      ]
+    },
+    "id": 3,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:32:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Advertising",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "Advertising",
+        "nameLocation": "78:11:0",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "69:31:0",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:67:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {
+    "1653064002920": {
+      "events": {},
+      "links": {},
+      "address": "0xF41A7c1f269E5b4DBf19EA512d0d82780829E163",
+      "transactionHash": "0xdb11fe31945cfe9c5572645e9345b024c87b2ff1f4cf6c4801aa528f70f0c1d4"
+    }
+  },
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-20T16:28:21.550Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
