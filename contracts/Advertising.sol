@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22;
 
-// 광고 컨트랙
+// 광고 컨트랙 ver1.0 광고는 구조체다
 contract Advertising {
     address payable private owner; //배포할 때 쓸 계정
 
@@ -9,7 +9,7 @@ contract Advertising {
         owner = payable(msg.sender);
     }
 
-    // ver 1 광고는 구조체다
+    // 광고 구조체
     struct AdvInfo {
         string comment; // 광고내용...초라하다
         uint256 pot; // 광고비
@@ -18,7 +18,9 @@ contract Advertising {
 
     // 변수와 매핑
     uint256 total_adv; // 총 등록된 광고 수 
+    uint256 total_person; // 등록한 광고주 수
 
+    mapping(uint256 => address) private _addr; // 모든 광고 조회를 위하여
     mapping(address => AdvInfo[]) private _advs; //주소 => 구조체 list
     
 
@@ -27,7 +29,7 @@ contract Advertising {
 
     // 광고 등록
     function addAdv(string memory _comment, uint256 _pot, uint256 _count) public payable returns (bool res) {
-        require(msg.value == _pot, "Not Enough ETH"); // 잔액이 광고비 만큼 있는지 확인
+        require(msg.value > _pot, "Not Enough ETH"); // 잔액이 광고비 만큼 있는지 확인
 
         AdvInfo memory a;
 
@@ -35,6 +37,12 @@ contract Advertising {
         a.pot = _pot;
         a.count = _count;
         total_adv++;
+
+        if (_advs[msg.sender].length == 0) // 처음 광고 등록하면 광고주 명단에 박제
+        { 
+            _addr[total_person] = msg.sender;
+            total_person++;
+        }
 
         _advs[msg.sender].push(a);
         
@@ -49,9 +57,27 @@ contract Advertising {
         return a;
     }
 
-    // 등록된 광고 목록 (다음 목표)
-    // function getAllAdv() public view returns (AdvInfo[] memory) {
-    // }   
+    // 등록된 광고 목록 
+    function getAllAdv() public view returns (AdvInfo[] memory) {
+        AdvInfo[] memory temp = new AdvInfo[](total_person * total_adv); 
+        uint256 idx = 0;
+
+        for (uint256 i = 0; i < total_person; i++) {
+            address iter_addr = _addr[i];
+            AdvInfo[] memory a = _advs[iter_addr];
+
+            for (uint256 j = 0; j < _advs[iter_addr].length; j++) {
+                temp[idx] = a[j];
+                idx++;
+            }
+        }
+        return temp;
+    }   
+
+    // 등록한 광고주는 몇명일까 ?
+    function getAllperson() public view returns (uint256) {
+        return total_person;
+    }
 
     // 등록된 광고는 수정이 가능해야 할까 ?
 }
